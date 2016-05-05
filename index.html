@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO LIST</title>
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+	</script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	
+</head>
+<body ng-app="myapp" ng-controller="mycontroller">
+	<h1>ADD YOUR TASK HERE </h1>
+	<input ng-model="task" id="input" ng-keyup="searchEnter()" type="text" placeholder="Enter Your Task">
+	<div id="main">
+		<ul>
+			<li ng-repeat="owntask in tasks">
+			<input type="checkbox" ng-model="owntask.status">
+			<span contenteditable="false" ng-dblclick="contentEdit()" ng-model="owntask.taskmessage"class="{{owntask.status}}">
+			{{owntask.taskmessage}}
+			</span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
